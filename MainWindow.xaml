@@ -1,0 +1,30 @@
+﻿<Window x:Class="TransparentH.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:TransparentH"
+        mc:Ignorable="d"
+        Title="" Height="691" WindowStyle="None" Foreground="{x:Null}" WindowState="Maximized" WindowStartupLocation="CenterScreen" Topmost="True" AllowsTransparency="True" ShowInTaskbar="False" Width="1150">
+    <Canvas x:Name="cumvas" KeyDown="cumvas_KeyDown">
+        <DataGrid x:Name="TablesDataGrid" Width="1" d:ItemsSource="{d:SampleData ItemCount=5}" HorizontalAlignment="Center" Canvas.Left="10" VerticalAlignment="Top" Canvas.Top="50" BorderThickness="0,0,0,0" CanUserDeleteRows="False" CanUserReorderColumns="False" CanUserResizeColumns="False" CanUserResizeRows="False" CanUserSortColumns="False" Opacity="0.01" Height="1" RenderTransformOrigin="0.5,0.5">
+            <DataGrid.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform ScaleY="1"/>
+                    <SkewTransform/>
+                    <RotateTransform/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </DataGrid.RenderTransform>
+        </DataGrid>
+        <TextBox x:Name="textbox" Canvas.Left="10" TextWrapping="Wrap" Text="TextBox" Canvas.Top="10" Width="1138" Background="{x:Null}" Opacity="0.02" BorderBrush="{x:Null}" HorizontalAlignment="Left" VerticalAlignment="Center" SelectionBrush="{x:Null}" SelectionTextBrush="{x:Null}" KeyUp="TextBox_KeyUp" BorderThickness="0,0,0,0" Foreground="#FFB3B3B3" Height="75" MouseEnter="TextBox_MouseEnter" TextChanged="textbox_TextChanged" Cursor="AppStarting"/>
+        <Button x:Name="btn" Content="" Canvas.Top="90" Height="601" Width="48" BorderThickness="0,0,0,0" BorderBrush="White" Background="White" Padding="0,0,0,0" Opacity="0.01" GotMouseCapture="Button_MouseEnter" MouseEnter="Button_MouseEnter" MouseLeave="Button_MouseEnter" HorizontalAlignment="Center" VerticalAlignment="Top"/>
+        <TextBlock x:Name="readyString" Canvas.Left="53" TextWrapping="Wrap" Text="there." Canvas.Top="133" Height="558" Width="1097" Opacity="0.2" FontFamily="Arial" FontStretch="UltraCondensed" FontWeight="Thin" VerticalAlignment="Top" HorizontalAlignment="Center" FontStyle="Italic" MouseLeave="TextBox_MouseEnter">
+            <TextBlock.Foreground>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="Black"/>
+                </LinearGradientBrush>
+            </TextBlock.Foreground>
+        </TextBlock>
+    </Canvas>
+</Window>
